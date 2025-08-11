@@ -35,11 +35,11 @@ export function useRaceAnimation() {
   }
 
   const toggleRace = () => {
-    store.state.isRaceActive = !store.state.isRaceActive
+    store.commit("setIsRaceActive", !store.state.isRaceActive)
     const isLapFinished = store.state.raceScheduleData[store.state.activeRound].isRoundFinished
     if (isLapFinished) {
       store.state.activeRound++
-      store.state.isRaceActive = !store.state.isRaceActive
+      store.commit("setIsRaceActive", !store.state.isRaceActive)
     }
     if (store.state.isRaceActive) {
       animate()

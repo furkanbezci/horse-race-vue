@@ -43,5 +43,8 @@ export default createStore({
     setActiveRound(state, round) {
       state.activeRound = round
     },
+    setIsRaceActive(state, isRaceActive){
+      state.isRaceActive = isRaceActive
+    }
   }
 })

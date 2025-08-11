@@ -44,7 +44,7 @@ export function useRaceGenerator() {
     }))
     store.commit('setRaceScheduleData', schedule)
     store.commit('setRaceResults', store.state.raceResults.map(r => ({ distance: r.distance, horses: [] })))
-    store.state.isRaceActive = false
+    store.commit('setIsRaceActive', false)
   }
 
   return { generateHorsesRandomly, pickHorsesRandomly, scheduleRace }
