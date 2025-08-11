@@ -1,48 +1,41 @@
-# horse-race
+# Horse Racing Simulation
 
-This template should help get you started developing with Vue 3 in Vite.
+An interactive **Horse Racing Simulation** built with **Vue.js + Vuex**.  
+Generate random race schedules, start/pause races, and watch real-time animations of horses competing based on their speed and condition.
 
-## Recommended IDE Setup
+---
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+## 🚀 Features
 
-## Customize configuration
+- 🎲 **Random Horse Selection** – Each race randomly selects 10 unique horses.
+- 🏁 **Live Race Animation** – Horses move dynamically based on speed and condition values.
+- 📊 **Race Program & Results Table** – Displays distance, participants, and race results for each round.
+- ⚡ **Vuex State Management** – Centralized store for race data, schedules, and results.
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+---
 
-## Project Setup
+## 🛠️ Tech Stack
 
+- [Vue.js 3](https://vuejs.org/) – Frontend framework
+- [Vuex](https://vuex.vuejs.org/) – State management
+- [Vite](https://vitejs.dev/) – Fast build tool
+
+Clone the repository
+```sh
+git clone https://github.com/furkanbezci/horse-race-vue.git
+```
+Navigate to the project folder
+```sh
+cd horse-race-vue
+```
+Install dependencies
 ```sh
 npm install
 ```
-
-### Compile and Hot-Reload for Development
-
+Start the development server
 ```sh
 npm run dev
 ```
+live: https://furkanbezci.github.io/horse-race-vue/
 
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
-
-### Run End-to-End Tests with [Playwright](https://playwright.dev)
-
-```sh
-# Install browsers for the first run
-npx playwright install
-
-# When testing on CI, must build the project first
-npm run build
-
-# Runs the end-to-end tests
-npm run test:e2e
-# Runs the tests only on Chromium
-npm run test:e2e -- --project=chromium
-# Runs the tests of a specific file
-npm run test:e2e -- tests/example.spec.ts
-# Runs the tests in debug mode
-npm run test:e2e -- --debug
-```
+[![SonarQube Cloud](https://sonarcloud.io/images/project_badges/sonarcloud-light.svg)](https://sonarcloud.io/summary/new_code?id=furkanbezci_horse-race-vue)
