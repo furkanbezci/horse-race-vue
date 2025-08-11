@@ -11,7 +11,6 @@ const activeRound = computed(() => store.state.activeRound)
 
 <template>
     <div class="race-container">
-        {{ console.log(raceScheduleData) }}
         <div v-if="raceScheduleData">
             <div v-for="(horse, index) in raceScheduleData?.[activeRound]?.horses" :key="horse?.id" class="race-line">
                 <div class="order">
