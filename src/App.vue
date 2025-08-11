@@ -21,7 +21,7 @@ onMounted(() => {
     <h1>Horse Racing</h1>
     <div class="button-group">
       <button @click="scheduleRace">Generate Race</button>
-      <button @click="toggleRace" :disabled="store.state.activeRound + 1 === 6">Start / Pause</button>
+      <button @click="toggleRace" :disabled=" store.state.raceScheduleData[5].isRoundFinished">Start / Pause</button>
     </div>
   </header>
 
