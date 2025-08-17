@@ -51,7 +51,6 @@ const props = defineProps({
 .table-wrapper {
     height: 700px;
     width: 190px;
-    overflow-y: auto;
 }
 h2 {
     font-weight: 600;
