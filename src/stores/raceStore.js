@@ -1,5 +1,6 @@
 import { createStore } from 'vuex'
 import { distances } from '@/constants'
+import { getInitialResults } from '@/utils/raceUtils'
 
 function getInitialSchedule() {
   return distances.map(distance => ({
@@ -15,12 +16,6 @@ function getInitialSchedule() {
   }))
 }
 
-function getInitialResults() {
-  return distances.map(distance => ({
-    distance,
-    horses: []
-  }))
-}
 
 export default createStore({
   state: {
