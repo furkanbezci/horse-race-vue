@@ -6,14 +6,17 @@ import TableComponent from './components/TableComponent.vue'
 import RaceArea from './components/RaceArea.vue'
 import { useRaceGenerator } from '@/composables/useRaceGenerator'
 import { useRaceAnimation } from '@/composables/useRaceAnimation'
+import { generateHorsesRandomly } from './utils/raceUtils'
 
 const store = useStore()
-const { scheduleRace, generateHorsesRandomly } = useRaceGenerator()
+const { scheduleRace } = useRaceGenerator()
 const { toggleRace } = useRaceAnimation()
 
 onMounted(() => {
-  generateHorsesRandomly()
+  const generatedHorses = generateHorsesRandomly()
+  store.commit('setAllHorses', generatedHorses)
 })
+
 </script>
 
 <template>
@@ -21,14 +24,13 @@ onMounted(() => {
     <h1>Horse Racing</h1>
     <div class="button-group">
       <button @click="scheduleRace">Generate Program</button>
-      <button @click="toggleRace" :disabled=" store.state.raceScheduleData[5].isRoundFinished">Start / Pause</button>
+      <button @click="toggleRace" :disabled="store.state.raceScheduleData[5].isRoundFinished">Start / Pause</button>
     </div>
   </header>
 
   <div class="body-container">
-    <HorseNameTable/>
-    <RaceArea 
-    />
+    <HorseNameTable />
+    <RaceArea />
 
     <div class="program-and-result-container">
       <TableComponent title="Program" :data="store.state.raceScheduleData" />
@@ -71,5 +73,6 @@ onMounted(() => {
   display: flex;
   gap: 1px;
   max-width: 30%;
+  overflow-y: auto;
 }
 </style>
